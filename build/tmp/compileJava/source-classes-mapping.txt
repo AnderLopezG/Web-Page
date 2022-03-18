@@ -1,0 +1,32 @@
+cine/model/MovieRepository.java
+ cine.model.MovieRepository
+cine/model/Screen.java
+ cine.model.Screen
+cine/model/Reservation.java
+ cine.model.Reservation
+cine/controllers/MainController.java
+ cine.controllers.MainController
+cine/MicroblogApplication.java
+ cine.MicroblogApplication
+cine/services/UserService.java
+ cine.services.UserService
+cine/model/UserRepository.java
+ cine.model.UserRepository
+cine/model/User.java
+ cine.model.User
+cine/model/ProjectionRepository.java
+ cine.model.ProjectionRepository
+cine/WebSecurityConfig.java
+ cine.WebSecurityConfig
+cine/services/UserServiceImpl.java
+ cine.services.UserServiceImpl
+cine/model/Movie.java
+ cine.model.Movie
+cine/services/UserDetailsServiceImpl.java
+ cine.services.UserDetailsServiceImpl
+cine/model/ReservationRepository.java
+ cine.model.ReservationRepository
+cine/model/ScreenRepository.java
+ cine.model.ScreenRepository
+cine/model/Projection.java
+ cine.model.Projection

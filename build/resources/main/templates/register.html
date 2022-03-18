@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Sign-in</title>
+        <link rel="stylesheet" href="public/register.css">
+    </head>
+    <body>
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <div th:if="${param.registered}">
+            Your new user has been registered.
+        </div>
+        
+        <div class="box">
+
+            <h1> Register </h1>    
+            <form th:action="@{/register}" method="post">
+                <div><label>User name:<input type="text" name="name" class="name" required/> </label></div>
+                <div><label>Email address:<input type="email" name="email" class="email" required/> </label></div>
+                <div><label>Password:<input type="password" name="password" class="password" required/> </label></div>
+                <div><label>Password repeat:<input type="password" name="passwordRepeat" class="passwordRepeat" required/> </label></div>
+                <input class="btn1" type="submit" value = "Sign up">
+
+            </form>
+        </div>
+        
+    </body>
+    <p class="copyright">Copyright (c) 2021 by Marina Rodriguez and Ander Lopez</p>
+</html>
