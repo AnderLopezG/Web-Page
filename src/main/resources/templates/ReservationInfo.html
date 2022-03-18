@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html xmlns:th="https://www.thymeleaf.org">
+    <link rel="stylesheet" th:href="@{/public/cinecopy.css}">
+      
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Reservation Info</title>
+    </head>
+      
+    <body>
+      <header>
+
+        <h1 class="header"> 
+            <div class="im_box">
+                <a href = "/"><img class = "cover" th:src="@{/public/image_header.jpg}" width= 90% height= 300px></a>
+                <div class="title">
+                    <strong>CINEMA THEATRE WEB</strong>
+                </div>
+            </div>
+            <a th:href="@{/user}"><img th:src="@{/public/user.png}" width= 100px height= 100px ></a>
+            <form th:action="@{/logout}" method="post" class = "logout">
+                <input type="submit" value="Log Out"/>
+            </form>
+        </h1>
+        
+    </header>
+      <div id="menu" > 
+        <ul class="nav">
+          <li><a href="/" class='up'> Home</a></li>
+          <li><a th:href="@{/user}" class='up'> Go back to all my reservations</a></li>
+        </ul>
+      </div>
+      
+      <h2 class='up'>My account:</h2>
+      <h3 class='down' th:text="${user.getName()}"> </h3>
+      <h4 class='down' th:text="${user.getEmail()}"> </h4>
+
+      <p class='films'>Reservation selected: </p> 
+    <body >
+      <table>
+          <thead>
+            <tr>
+              <th align="center">Movie</th>             
+              <th align="center">Date of movie</th>
+              <th align="center">Number of seats reserved</th>
+              <th align="center">Screen</th>
+              <th align="center">Confirmation date</th>
+              <th align="center">Print</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="center"><span th:text="${movie.gettitle()}"></span></td>
+              <td align="center"><span th:text="${projection.getDay()}"></span></td>
+              <td align="center"><span th:text="${reservation.getNumSeats()}"></span></td>
+              <td align="center"><span th:text="${screen.getNumber()}"></span></td>
+              <td align="center"><span th:text="${reservation.getDay()}"></span></td>
+              <td align="center"><input type="button" value="Print" class="print" onclick="javascript:window.print()"/></td>
+            </tr>
+          </tbody>
+      </table>
+      <br>
+      
+    </body>
+    <p class="copyright">Copyright (c) 2021 by Marina Rodriguez and Ander Lopez</p>
+</html>

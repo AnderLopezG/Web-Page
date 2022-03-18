@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+  <html xmlns:th="https://www.thymeleaf.org">
+    <link rel="stylesheet" th:href="@{/public/cinecopy.css}">
+      
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Reservation</title>
+    </head>
+      
+    <body>
+      <header>
+
+        <h1 class="header"> 
+            <div class="im_box">
+                <a href = "/"><img class = "cover" th:src="@{/public/image_header.jpg}" width= 90% height= 300px></a>
+                <div class="title">
+                    <strong>CINEMA THEATRE WEB</strong>
+                </div>
+            </div>
+            <a th:href="@{/user}"><img th:src="@{/public/user.png}" width= 100px height= 100px ></a>
+            <form th:action="@{/logout}" method="post" class = "logout">
+                <input type="submit" value="Log Out"/>
+            </form>
+        </h1>
+        
+    </header>
+
+      <div id="menu" > 
+        <ul class="nav">
+          <li><a href="/" class='up'> Home</a></li>
+          <li><a th:href="@{/movie/{id}(id=${movieproj.getMovie().getId()})}" class='up'>Go back to movie</a></li>
+        </ul>
+      </div>
+    
+    
+      <h2 class='films'>RESERVATION</h2>
+
+      <div class='reserva'> 
+        <p><strong>Movie selected: </strong> <span th:text="${movieproj.getMovie().gettitle()}"></span></p>
+        <p><strong>Screen: </strong><span th:text="${movieproj.getScreen().getNumber()}"></span></p>
+        <p><strong>Day and time of movie: </strong><span th:text="${movieproj.getDay()}"></span></p>
+        <p><strong>Seats available: </strong><span th:text = "${numavailable}"></span></p> 
+      </div>
+
+      <p>
+      <div class= films>
+        <label th:text="${error1}"></label>
+        <form th:action="@{/reservationform}" method="POST">
+          Select number of seats you want to reserve <input type="number" name="seats" min="1" max="10"> </input>
+          <input type="hidden" name="projectionId" th:value="${movieproj.getId()}"></input>
+          <input type="submit" value="Buy tickets" class='boton'>
+        </form>
+      </div>
+    </p>
+    <br>
+
+    </body>
+    <p class="copyright">Copyright (c) 2021 by Marina Rodriguez and Ander Lopez</p>
+</html>
+
